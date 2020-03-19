@@ -1,25 +1,13 @@
-server:
-  port: 9527
 spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
   application:
-    name: zuul
-eureka:
-  instance:
-    instance-id: zuul-9527
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://139.9.211.150:7001/eureka/,http://139.9.211.150:7002/eureka/,http://139.9.211.150:7003/eureka/
-
-zuul:
-  prefix: /zuulproxy # 前缀
-  routes:
-    test.serviceId: provider-hystrix
-    test.path: /prohy/**
-  ignored-services: provider-hystrix # 禁用原来的服务名访问方式
-#  ignored-services: "*" # 禁用所有服务名
-info:
-  app.name: kira-cloud
-  company.name: kira-company
-  build.artifactId: zuulId
-  build.version: 1.0.0
+    name: dev-test
+---
+spring:
+  profiles: prop
+  application:
+    name: prop-test
