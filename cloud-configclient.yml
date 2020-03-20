@@ -14,9 +14,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://139.9.211.150:7001/eureka/,http://139.9.211.150:7002/eureka/,http://139.9.211.150:7003/eureka/
+server:
+  port: 3355
 ---
 spring:
-  port: 3355
   profiles: prop
   application:
     name: cloud-config-client-prop
@@ -27,3 +28,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://139.9.211.150:7001/eureka/,http://139.9.211.150:7002/eureka/,http://139.9.211.150:7003/eureka/
+server:
+  port: 3355
